@@ -18,9 +18,28 @@
 
 //executa o calculo do imc
         var IMC = peso / (altura * altura);
-        var tdIMC = paciente.querySelector(".info-imc")
-        tdIMC.textContent = IMC;
+        
+        //valores booleanos
+        var pesoValido = true;
+        var alturaValida = true;
 
+        //alerta caso o peso e a altura sejam inválidos
+        if(peso <= 0|| peso >= 1000){
+                var pesoValido = false; 
+                alert("peso inválido!");
+        }
+      
+
+        if(altura < 0|| altura > 3.00){
+                var alturaValida = false;
+                alert("altura inválida!");
+        }
+
+        if(pesoValido && alturaValida){
+
+                var tdIMC = paciente.querySelector(".info-imc");
+                tdIMC.textContent = IMC;
+        }
 
         console.log(tdpeso);
         console.log(peso);
