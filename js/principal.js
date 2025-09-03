@@ -1,15 +1,18 @@
 //Busca os elementos a partir da classe e atribui novo valor
 
 
-        var pacientes = document.querySelector("h2");
-        pacientes.textContent = "Lucas Nutrição"
+        var título = document.querySelector("h2");
+        título.textContent = "Lucas Nutrição"
 
-        var pacientes = document.querySelector("h1");
-        pacientes.textContent = "Dados pacientes"
+        var tsecundario = document.querySelector("h1");
+        tsecundario.textContent = "Dados pacientes"
 
  //Cria a variável paciente e busca o elemento a partir da classe e muda seu conteúdo       
-        var paciente = document.querySelector("#primeiro-paciente");
-        var tdpeso = paciente.querySelector(".info-peso");
+        var pacientes = document.querySelectorAll(".paciente");
+        for(var i = 0; i < pacientes.length; i++){
+                var paciente = pacientes[i];
+
+                var tdpeso = paciente.querySelector(".info-peso");
         var peso = tdpeso.textContent;
 
 //busca o elemento altura e altera o conteúdo dele
@@ -38,10 +41,10 @@
         if(pesoValido && alturaValida){
 
                 var tdIMC = paciente.querySelector(".info-imc");
-                tdIMC.textContent = IMC;
+                tdIMC.textContent = IMC.toFixed(2);
         }
 
-        console.log(tdpeso);
-        console.log(peso);
-        console.log(tdaltura);
-        console.log(altura);
+        }
+
+
+     
