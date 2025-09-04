@@ -24,19 +24,7 @@
         
         //valores booleanos
         var pesoValido = true;
-        var alturaValida = true;
-
-        //alerta caso o peso e a altura sejam inválidos
-        if(peso <= 0|| peso >= 1000){
-                var pesoValido = false; 
-                alert("peso inválido!");
-        }
-      
-
-        if(altura < 0|| altura > 3.00){
-                var alturaValida = false;
-                alert("altura inválida!");
-        }
+        var alturaValida = true; 
 
         if(pesoValido && alturaValida){
 
@@ -44,6 +32,22 @@
                 tdIMC.textContent = IMC.toFixed(2);
         }
 
+
+        //alerta caso o peso e a altura sejam inválidos
+        if(peso <= 0|| peso >= 1000){
+                var pesoValido = false; 
+                tdIMC.textContent = "Peso Inválido !";
+               tdIMC.classList.add("paciente-invalido");
+        }
+      
+
+        if(altura < 0|| altura > 3.00){
+                var alturaValida = false;
+                tdIMC.textContent = "Altura inválida !"
+                tdIMC.classList.add("paciente-invalido");
+        }
+
+       
         }
 
 
